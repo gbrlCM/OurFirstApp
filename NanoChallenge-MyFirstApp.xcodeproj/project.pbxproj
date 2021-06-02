@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		5B33FABE2665768800EA909E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B33FABD2665768800EA909E /* AppDelegate.swift */; };
 		5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B33FABF2665768800EA909E /* SceneDelegate.swift */; };
-		5B33FAC22665768800EA909E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B33FAC12665768800EA909E /* ViewController.swift */; };
 		5B33FAC52665768800EA909E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B33FAC32665768800EA909E /* Main.storyboard */; };
 		5B33FAC72665768900EA909E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B33FAC62665768900EA909E /* Assets.xcassets */; };
 		5B33FACA2665768900EA909E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B33FAC82665768900EA909E /* LaunchScreen.storyboard */; };
+		5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B33FABA2665768800EA909E /* NanoChallenge-MyFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NanoChallenge-MyFirstApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B33FABD2665768800EA909E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B33FABF2665768800EA909E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B33FAC12665768800EA909E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B33FAC42665768800EA909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B33FAC62665768900EA909E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B33FAC92665768900EA909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B33FACB2665768900EA909E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		5B33FABC2665768800EA909E /* NanoChallenge-MyFirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				5BCF54B326670800007DF0A9 /* StartScreen */,
 				5B33FABD2665768800EA909E /* AppDelegate.swift */,
 				5B33FABF2665768800EA909E /* SceneDelegate.swift */,
-				5B33FAC12665768800EA909E /* ViewController.swift */,
 				5B33FAC32665768800EA909E /* Main.storyboard */,
 				5B33FAC62665768900EA909E /* Assets.xcassets */,
 				5B33FAC82665768900EA909E /* LaunchScreen.storyboard */,
 				5B33FACB2665768900EA909E /* Info.plist */,
 			);
 			path = "NanoChallenge-MyFirstApp";
+			sourceTree = "<group>";
+		};
+		5BCF54B326670800007DF0A9 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */,
+			);
+			path = StartScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B33FAC22665768800EA909E /* ViewController.swift in Sources */,
 				5B33FABE2665768800EA909E /* AppDelegate.swift in Sources */,
 				5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */,
+				5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
