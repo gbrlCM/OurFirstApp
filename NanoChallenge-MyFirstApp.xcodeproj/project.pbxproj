@@ -26,6 +26,7 @@
 		5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B7266711FB007DF0A9 /* UIButton.swift */; };
 		5BCF54BA26671207007DF0A9 /* UICollor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B926671207007DF0A9 /* UICollor.swift */; };
 		5BCF54BD266716AE007DF0A9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54BC266716AE007DF0A9 /* GameViewController.swift */; };
+		DB6345112667F20000E02A00 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6345102667F20000E02A00 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		5BCF54B7266711FB007DF0A9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5BCF54B926671207007DF0A9 /* UICollor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollor.swift; sourceTree = "<group>"; };
 		5BCF54BC266716AE007DF0A9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DB6345102667F20000E02A00 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +166,19 @@
 		5BCF54BB26671669007DF0A9 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				DB63450F2667F1E500E02A00 /* Models */,
 				5B3FD57E2667A29C00ABB07E /* Views */,
 				5B3FD57D2667A29300ABB07E /* ViewControllers */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		DB63450F2667F1E500E02A00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB6345102667F20000E02A00 /* Card.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 				5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */,
 				5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */,
 				5B3FD5862667A54600ABB07E /* GameResultsViewController.swift in Sources */,
+				DB6345112667F20000E02A00 /* Card.swift in Sources */,
 				5BCF54BD266716AE007DF0A9 /* GameViewController.swift in Sources */,
 				5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */,
 				5B3FD58B2667A5DF00ABB07E /* StoryBoardNames.swift in Sources */,
@@ -421,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WK7599VNDW;
 				INFOPLIST_FILE = "NanoChallenge-MyFirstApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WK7599VNDW;
 				INFOPLIST_FILE = "NanoChallenge-MyFirstApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

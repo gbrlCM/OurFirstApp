@@ -10,12 +10,17 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
-    @IBOutlet weak var teste: UIButton!
+    
     var number: Int?
 
+    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var wrongButton: UIButton!
+    @IBOutlet weak var correctButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupStyle()
         if let sendNumber = number {
             print(sendNumber)
         }
@@ -25,16 +30,19 @@ class GameViewController: UIViewController {
             nvc.popViewController(animated: true)
         }), for: .touchUpInside)
         
-        teste.addAction(UIAction(handler: {[weak self] _ in
-            let storyboard = UIStoryboard(named: .gameResults)
-            let vc = storyboard.instantiateViewController(withIdentifier: .gameResults)
-            
-            guard let nvc = self?.navigationController else { return }
-            nvc.pushViewController(vc, animated: true)
-        }), for: .touchUpInside)
+        
         // Do any additional setup after loading the view.
     }
-    
+    private func setupStyle(){
+        wrongButton.layer.cornerRadius = wrongButton.frame.height/8
+        correctButton.layer.cornerRadius = correctButton.frame.height/8
+        
+        cardImageView.layer.shadowColor = UIColor.black.cgColor
+        cardImageView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        cardImageView.layer.shadowRadius = 12
+        cardImageView.layer.shadowOpacity = 0.6
+        
+    }
 
     /*
     // MARK: - Navigation
