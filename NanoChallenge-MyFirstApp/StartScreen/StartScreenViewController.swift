@@ -14,9 +14,26 @@ class StartScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        startButton.layer.cornerRadius = 16
+        setupStartButtonStyle()
         // Do any additional setup after loading the view.
+    }
+    
+    private func setupStartButtonStyle() {
+        startButton.layer.cornerRadius = 16
+        startButton.clipsToBounds = true
+        startButton.backgroundColor = .none
+        startButton.setBackgroundColor(.accent, for: .normal)
+        startButton.setBackgroundColor(.accent.darken(by: 0.07), for: .highlighted)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.setTitleColor(.gray, for: .highlighted)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        guard let vc = segue.destination as? GameViewController else { return }
+        
+        vc.number = 34
     }
 
     /*
