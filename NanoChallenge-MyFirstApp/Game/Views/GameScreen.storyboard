@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="Zdn-Ic-96g">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-w4g-zA-9h9" id="w4g-zA-9h9" customClass="GameViewController" customModule="NanoChallenge_MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gg-X0-m88">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-uA-XFc">
+                                <rect key="frame" x="16" y="52" width="48.5" height="46.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="x.circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="large" weight="bold"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-NS-m7I">
+                                <rect key="frame" x="349.5" y="52" width="48.5" height="46.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="questionmark.circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vAX-J3-NCR" kind="presentation" id="LrE-mb-fnD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-Fg-ieo">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TOa-XC-HNw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rqA-Fg-ieo" firstAttribute="centerX" secondItem="2gg-X0-m88" secondAttribute="centerX" id="MMy-BN-cq6"/>
+                            <constraint firstItem="TOa-XC-HNw" firstAttribute="trailing" secondItem="bLR-NS-m7I" secondAttribute="trailing" constant="16" id="QIs-vy-Fg9"/>
+                            <constraint firstItem="rqA-Fg-ieo" firstAttribute="centerY" secondItem="2gg-X0-m88" secondAttribute="centerY" id="Vow-FK-lbH"/>
+                            <constraint firstItem="zl5-uA-XFc" firstAttribute="top" secondItem="TOa-XC-HNw" secondAttribute="top" constant="8" id="gQf-7w-zqP"/>
+                            <constraint firstItem="bLR-NS-m7I" firstAttribute="top" secondItem="TOa-XC-HNw" secondAttribute="top" constant="8" id="mta-0O-dsk"/>
+                            <constraint firstItem="zl5-uA-XFc" firstAttribute="leading" secondItem="TOa-XC-HNw" secondAttribute="leading" constant="16" id="uZg-B8-dLJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ELm-Yq-WZC"/>
+                    <connections>
+                        <outlet property="exitButton" destination="zl5-uA-XFc" id="UY4-r5-58m"/>
+                        <outlet property="teste" destination="rqA-Fg-ieo" id="2as-As-Lih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03b-2x-DWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="-15"/>
+        </scene>
+        <!--UIViewController-tPx-QQ-orj-->
+        <scene sceneID="Fam-XN-0zL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContentInfoScreen" referencedIdentifier="UIViewController-tPx-QQ-orj" id="vAX-J3-NCR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hS5-1j-1W8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2679" y="-15"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="x.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.69599997997283936" green="0.460999995470047" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
