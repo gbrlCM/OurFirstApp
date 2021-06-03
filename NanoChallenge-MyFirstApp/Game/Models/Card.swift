@@ -15,7 +15,7 @@ struct Card {
     var subjectExplanation: String
     var answerExplanation: String
     var userGetItRight: Bool
-
+    
     static func generateCards() -> [Card] {
         let subjects = Subject.allCases
         
@@ -27,5 +27,4 @@ struct Card {
             else { return subject.wrongCard() }
         }
     }
-
 }
