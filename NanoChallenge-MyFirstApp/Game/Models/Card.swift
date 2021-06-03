@@ -16,4 +16,16 @@ struct Card {
     var answerExplanation: String
     var userGetItRight: Bool
 
+    static func generateCards() -> [Card] {
+        let subjects = Subject.allCases
+        
+        return subjects.map { subject -> Card in
+            
+            let rand = Int.random(in: 0...1)
+            print(rand)
+            if rand == 0 { return subject.correctCard() }
+            else { return subject.wrongCard() }
+        }
+    }
+
 }
