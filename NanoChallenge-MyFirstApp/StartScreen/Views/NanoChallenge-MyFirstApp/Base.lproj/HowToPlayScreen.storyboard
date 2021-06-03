@@ -16,18 +16,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnN-Af-hoD">
-                                <rect key="frame" x="149" y="437.5" width="116.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-T9-xWD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64G-kN-NSn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play Typoops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bw-Oq-QBl">
+                                                <rect key="frame" x="32" y="16" width="350" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-Vt-1Q2">
+                                                <rect key="frame" x="32" y="86.5" width="350" height="81.5"/>
+                                                <string key="text">Typoops is a game about the correct usage of typography. When you hit play you will be shown example of text and you must decide if its a correct or wrong use of typography.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.11" translatesAutoresizingMaskIntoConstraints="NO" id="Saf-8g-ebu">
+                                                <rect key="frame" x="32" y="184" width="350" height="542"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will answer 10 questions, at the end of it you will see your results and a explanation about why is it wrong or right." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlU-gI-Fyp">
+                                                <rect key="frame" x="32" y="742" width="350" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.34" translatesAutoresizingMaskIntoConstraints="NO" id="XKn-wM-iUh">
+                                                <rect key="frame" x="32" y="819" width="350" height="129"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can leave the game at any time at the X and the ? to see information abount the content asked." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXu-z5-fb4">
+                                                <rect key="frame" x="32" y="964" width="350" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.46" translatesAutoresizingMaskIntoConstraints="NO" id="Wwi-wu-7GL">
+                                                <rect key="frame" x="32" y="1076" width="350" height="66"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Saf-8g-ebu" firstAttribute="leading" secondItem="H5x-Vt-1Q2" secondAttribute="leading" id="4sZ-7G-52Y"/>
+                                            <constraint firstItem="2Bw-Oq-QBl" firstAttribute="leading" secondItem="64G-kN-NSn" secondAttribute="leading" constant="32" id="6Jb-hR-bSj"/>
+                                            <constraint firstItem="XKn-wM-iUh" firstAttribute="top" secondItem="xlU-gI-Fyp" secondAttribute="bottom" constant="16" id="6zo-GP-McB"/>
+                                            <constraint firstItem="cXu-z5-fb4" firstAttribute="leading" secondItem="XKn-wM-iUh" secondAttribute="leading" id="7sV-g1-yRe"/>
+                                            <constraint firstItem="cXu-z5-fb4" firstAttribute="top" secondItem="XKn-wM-iUh" secondAttribute="bottom" constant="16" id="9at-WT-NcI"/>
+                                            <constraint firstItem="xlU-gI-Fyp" firstAttribute="leading" secondItem="Saf-8g-ebu" secondAttribute="leading" id="B6d-pR-PpK"/>
+                                            <constraint firstItem="cXu-z5-fb4" firstAttribute="trailing" secondItem="XKn-wM-iUh" secondAttribute="trailing" id="BVX-Yt-9wd"/>
+                                            <constraint firstItem="2Bw-Oq-QBl" firstAttribute="top" secondItem="64G-kN-NSn" secondAttribute="top" constant="16" id="C3k-Im-rWK"/>
+                                            <constraint firstItem="Saf-8g-ebu" firstAttribute="trailing" secondItem="H5x-Vt-1Q2" secondAttribute="trailing" id="FA3-cz-nus"/>
+                                            <constraint firstItem="Wwi-wu-7GL" firstAttribute="trailing" secondItem="cXu-z5-fb4" secondAttribute="trailing" id="IiS-uN-Tqn"/>
+                                            <constraint firstItem="xlU-gI-Fyp" firstAttribute="trailing" secondItem="Saf-8g-ebu" secondAttribute="trailing" id="Kz1-t9-qvn"/>
+                                            <constraint firstItem="H5x-Vt-1Q2" firstAttribute="leading" secondItem="2Bw-Oq-QBl" secondAttribute="leading" id="MZC-uA-ptg"/>
+                                            <constraint firstItem="H5x-Vt-1Q2" firstAttribute="top" secondItem="2Bw-Oq-QBl" secondAttribute="bottom" constant="32" id="RXk-0e-I96"/>
+                                            <constraint firstItem="H5x-Vt-1Q2" firstAttribute="trailing" secondItem="2Bw-Oq-QBl" secondAttribute="trailing" id="aPb-DY-7tC"/>
+                                            <constraint firstItem="XKn-wM-iUh" firstAttribute="trailing" secondItem="xlU-gI-Fyp" secondAttribute="trailing" id="hSo-EU-1JX"/>
+                                            <constraint firstItem="Wwi-wu-7GL" firstAttribute="leading" secondItem="cXu-z5-fb4" secondAttribute="leading" id="kzd-tY-kp8"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Bw-Oq-QBl" secondAttribute="trailing" constant="32" id="lLs-Yd-9R5"/>
+                                            <constraint firstItem="Saf-8g-ebu" firstAttribute="top" secondItem="H5x-Vt-1Q2" secondAttribute="bottom" constant="16" id="nBT-hj-TAu"/>
+                                            <constraint firstItem="XKn-wM-iUh" firstAttribute="leading" secondItem="xlU-gI-Fyp" secondAttribute="leading" id="oDC-hh-0mZ"/>
+                                            <constraint firstItem="xlU-gI-Fyp" firstAttribute="top" secondItem="Saf-8g-ebu" secondAttribute="bottom" constant="16" id="p9l-YM-zIz"/>
+                                            <constraint firstItem="Wwi-wu-7GL" firstAttribute="top" secondItem="cXu-z5-fb4" secondAttribute="bottom" constant="51" id="r7N-4k-CCE"/>
+                                            <constraint firstAttribute="height" constant="1500" id="vLL-6D-Wlv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="64G-kN-NSn" firstAttribute="bottom" secondItem="yN7-3D-rrL" secondAttribute="bottom" constant="128" id="BNm-YI-ENG"/>
+                                    <constraint firstItem="64G-kN-NSn" firstAttribute="width" secondItem="7mz-uX-t2H" secondAttribute="width" id="EL7-Zz-gq6"/>
+                                    <constraint firstItem="64G-kN-NSn" firstAttribute="top" secondItem="yN7-3D-rrL" secondAttribute="top" id="GM7-gG-mMS"/>
+                                    <constraint firstItem="64G-kN-NSn" firstAttribute="trailing" secondItem="yN7-3D-rrL" secondAttribute="trailing" constant="240" id="n8Y-s0-vfJ"/>
+                                    <constraint firstItem="64G-kN-NSn" firstAttribute="leading" secondItem="yN7-3D-rrL" secondAttribute="leading" id="uqS-y2-hUW"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="yN7-3D-rrL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7mz-uX-t2H"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p5S-Ya-21z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZnN-Af-hoD" firstAttribute="centerY" secondItem="PWQ-lP-3Cc" secondAttribute="centerY" id="RAH-LZ-49X"/>
-                            <constraint firstItem="ZnN-Af-hoD" firstAttribute="centerX" secondItem="PWQ-lP-3Cc" secondAttribute="centerX" id="bLF-Fv-4Cy"/>
+                            <constraint firstItem="zZ5-T9-xWD" firstAttribute="top" secondItem="p5S-Ya-21z" secondAttribute="top" id="3AB-E1-pmu"/>
+                            <constraint firstItem="zZ5-T9-xWD" firstAttribute="leading" secondItem="p5S-Ya-21z" secondAttribute="leading" id="FfG-L3-Rag"/>
+                            <constraint firstItem="p5S-Ya-21z" firstAttribute="bottom" secondItem="zZ5-T9-xWD" secondAttribute="bottom" id="VSp-fG-Tiu"/>
+                            <constraint firstItem="p5S-Ya-21z" firstAttribute="trailing" secondItem="zZ5-T9-xWD" secondAttribute="trailing" id="h84-Y0-QM5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OZT-6z-2bb"/>
@@ -38,6 +112,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screen Shot 2021-06-02 at 22.35.11" width="340" height="542"/>
+        <image name="Screen Shot 2021-06-02 at 22.35.34" width="385" height="129"/>
+        <image name="Screen Shot 2021-06-02 at 22.35.46" width="385" height="66"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
