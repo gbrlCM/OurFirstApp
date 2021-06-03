@@ -28,13 +28,11 @@ class StartScreenViewController: UIViewController {
         startButton.setTitleColor(.gray, for: .highlighted)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        guard let vc = segue.destination as? GameViewController else { return }
-        
-        vc.number = 34
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        guard let vc = segue.destination as? GameViewController else { return }
+//    }
 
     /*
     // MARK: - Navigation
