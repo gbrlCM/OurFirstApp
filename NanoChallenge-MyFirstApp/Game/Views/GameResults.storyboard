@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,29 +17,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6p-OM-1uo">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMAZING!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-3w-qLz">
+                                <rect key="frame" x="64" y="98" width="286" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-wZ-cZP">
+                                <rect key="frame" x="324" y="52" width="74" height="30"/>
+                                <state key="normal" title="Novo Jogo">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You got 10/10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIm-aL-J0w">
+                                <rect key="frame" x="64" y="136" width="286" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caT-6I-Pvl">
+                                <rect key="frame" x="16" y="52" width="30" height="30"/>
+                                <state key="normal" title="Sair">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="now go fix our title!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xp-uC-yGV">
+                                <rect key="frame" x="64" y="156.5" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dRq-a8-1Of">
+                                <rect key="frame" x="16" y="209.5" width="382" height="652.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6FQ-Po-XHj" customClass="ResultCell" customModule="NanoChallenge_MyFirstApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="382" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6FQ-Po-XHj" id="Uyc-94-Ilp">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="t6p-OM-1uo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9LE-Xa-0uL"/>
-                            <constraint firstItem="t6p-OM-1uo" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="pHx-15-tUt"/>
+                            <constraint firstItem="iZO-3w-qLz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="0vk-Sq-4I8"/>
+                            <constraint firstItem="dRq-a8-1Of" firstAttribute="top" secondItem="7xp-uC-yGV" secondAttribute="bottom" constant="32" id="3X8-Rb-dlD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dRq-a8-1Of" secondAttribute="trailing" constant="16" id="4Gl-MW-QML"/>
+                            <constraint firstItem="dRq-a8-1Of" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5zP-eV-hGQ"/>
+                            <constraint firstItem="caT-6I-Pvl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="6Vf-cQ-dwm"/>
+                            <constraint firstItem="6g4-wZ-cZP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="7ou-7b-Z3a"/>
+                            <constraint firstItem="7xp-uC-yGV" firstAttribute="top" secondItem="RIm-aL-J0w" secondAttribute="bottom" id="8zI-BW-DUr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RIm-aL-J0w" secondAttribute="trailing" constant="64" id="94Q-AU-d80"/>
+                            <constraint firstItem="RIm-aL-J0w" firstAttribute="top" secondItem="iZO-3w-qLz" secondAttribute="bottom" constant="8" id="Cvx-fW-CmE"/>
+                            <constraint firstItem="caT-6I-Pvl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OU4-i0-AdW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6g4-wZ-cZP" secondAttribute="trailing" constant="16" id="PYJ-Y8-v8y"/>
+                            <constraint firstItem="7xp-uC-yGV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="Tsc-aS-asq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7xp-uC-yGV" secondAttribute="trailing" constant="64" id="VVz-0j-Rqk"/>
+                            <constraint firstItem="RIm-aL-J0w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="dkt-Rk-bEQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iZO-3w-qLz" secondAttribute="trailing" constant="64" id="eaY-h3-PBE"/>
+                            <constraint firstItem="iZO-3w-qLz" firstAttribute="top" secondItem="caT-6I-Pvl" secondAttribute="bottom" constant="16" id="jEq-rs-P0X"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dRq-a8-1Of" secondAttribute="bottom" id="v4M-0z-KbN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultsTableView" destination="dRq-a8-1Of" id="08g-fN-xjO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="106"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.69599997997283936" green="0.460999995470047" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
