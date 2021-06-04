@@ -34,4 +34,12 @@ extension UIColor {
     static var accent: UIColor {
         UIColor(named: "AccentColor")!
     }
+    
+    static var background: UIColor {
+        UIColor(named: "BackgroundColor")!
+    }
+    
+    static var cellColor: UIColor {
+        UIColor(named: "CellColor")!
+    }
 }
