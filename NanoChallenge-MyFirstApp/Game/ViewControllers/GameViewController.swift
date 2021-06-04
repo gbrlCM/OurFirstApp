@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
     private func initialSetup() {
         actualCard = cards[cardCount]
         titleLabel.text = actualCard?.subject
-        countLabel.text = "\(cardCount+1)/10"
+        countLabel.text = "\(cardCount+1)/\(cards.count)"
         cardImageView.image = actualCard?.cardImage
     }
     
@@ -97,7 +97,7 @@ class GameViewController: UIViewController {
         }
         
         cardCount += 1
-        countLabel.text = "\(cardCount+1)/10"
+        countLabel.text = "\(cardCount+1)/\(cards.count)"
         
         guard cardCount < cards.count else {
             goToResultsScreen()

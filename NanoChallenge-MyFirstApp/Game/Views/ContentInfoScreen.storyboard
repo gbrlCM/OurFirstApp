@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4r-tB-A1H">
-                                <rect key="frame" x="337" y="52" width="45" height="35"/>
+                                <rect key="frame" x="353" y="52" width="45" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Done">
@@ -26,13 +26,13 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spm-jF-8Va">
-                                <rect key="frame" x="32" y="119" width="350" height="38.5"/>
+                                <rect key="frame" x="32" y="103" width="350" height="38.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvv-5o-TAT">
-                                <rect key="frame" x="16" y="174.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="158.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,10 +41,10 @@
                         <viewLayoutGuide key="safeArea" id="SvG-4G-gG4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SvG-4G-gG4" firstAttribute="trailing" secondItem="b4r-tB-A1H" secondAttribute="trailing" constant="32" id="5XV-Np-sVf"/>
+                            <constraint firstItem="SvG-4G-gG4" firstAttribute="trailing" secondItem="b4r-tB-A1H" secondAttribute="trailing" constant="16" id="5XV-Np-sVf"/>
                             <constraint firstItem="b4r-tB-A1H" firstAttribute="top" secondItem="SvG-4G-gG4" secondAttribute="top" constant="8" id="I4I-tx-oTC"/>
                             <constraint firstItem="qvv-5o-TAT" firstAttribute="leading" secondItem="SvG-4G-gG4" secondAttribute="leading" constant="16" id="Zmx-OK-fMQ"/>
-                            <constraint firstItem="spm-jF-8Va" firstAttribute="top" secondItem="b4r-tB-A1H" secondAttribute="bottom" constant="32" id="gOY-9a-6GK"/>
+                            <constraint firstItem="spm-jF-8Va" firstAttribute="top" secondItem="b4r-tB-A1H" secondAttribute="bottom" constant="16" id="gOY-9a-6GK"/>
                             <constraint firstItem="SvG-4G-gG4" firstAttribute="trailing" secondItem="qvv-5o-TAT" secondAttribute="trailing" constant="16" id="j0y-xc-xOA"/>
                             <constraint firstItem="qvv-5o-TAT" firstAttribute="top" secondItem="spm-jF-8Va" secondAttribute="bottom" constant="17" id="osJ-eI-Ax3"/>
                             <constraint firstItem="spm-jF-8Va" firstAttribute="leading" secondItem="SvG-4G-gG4" secondAttribute="leading" constant="32" id="tl6-d0-w8i"/>

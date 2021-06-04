@@ -63,7 +63,7 @@ class GameResultsViewController: UIViewController {
     private func setNumberOfCorrectAnswers(for number: Int) {
         print("number: \(number)")
         
-        countLabel.text = "You got \(number)/10"
+        countLabel.text = "You got \(number)/\(cards.count)"
     }
     
     private func setTexts(correctAnswerCount: Int) {
