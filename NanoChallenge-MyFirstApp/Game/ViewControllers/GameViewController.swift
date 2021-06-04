@@ -100,7 +100,7 @@ class GameViewController: UIViewController {
         countLabel.text = "\(cardCount+1)/10"
         
         guard cardCount < cards.count else {
-            
+            goToResultsScreen()
             return
         }
         
@@ -109,7 +109,24 @@ class GameViewController: UIViewController {
         titleLabel.text = actualCard?.subject
         
     }
+    
+    private func goToResultsScreen() {
+        
+        let storyBoard = UIStoryboard(named: .gameResults)
+        guard let resultsViewController = storyBoard.instantiateViewController(withIdentifier: .gameResults) as? GameResultsViewController else { return }
+        resultsViewController.modalPresentationStyle = .fullScreen
+        resultsViewController.cards = cards
+        resultsViewController.delegate = self
+        self.present(resultsViewController, animated: true, completion: nil)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        guard let destination = segue.destination as? ContentInfoViewController else { return }
+        destination.titleString = cards[cardCount].subject
+        destination.bodyString = cards[cardCount].subjectExplanation
+    }
     /*
     // MARK: - Navigation
 
@@ -120,4 +137,22 @@ class GameViewController: UIViewController {
     }
     */
 
+}
+
+extension GameViewController: GameResultsDelegate {
+    func newGame() {
+        cards = Card.generateCards()
+        cardCount = 0
+        initialSetup()
+        self.dismiss(animated: true, completion: nil)
+        print("hi new game")
+    }
+    
+    func goToHome() {
+        guard let nvc = navigationController else { return }
+        self.dismiss(animated: true, completion: nil)
+        nvc.popToRootViewController(animated: false)
+        print("Hi")
+        
+    }
 }

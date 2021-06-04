@@ -9,10 +9,21 @@ import UIKit
 
 class ContentInfoViewController: UIViewController {
 
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    var titleString: String = ""
+    var bodyString: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("ooii")
+        doneButton.addAction(.init(handler: {[weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }), for: .touchUpInside)
+        subjectLabel.text = titleString
+        bodyLabel.text = bodyString
         // Do any additional setup after loading the view.
     }
     
