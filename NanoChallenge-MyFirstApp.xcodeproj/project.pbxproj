@@ -26,6 +26,8 @@
 		5B7ABA212669451800117D7B /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7ABA202669451800117D7B /* ResultCell.swift */; };
 		5B7ABA2426694D4900117D7B /* GameResultsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7ABA2326694D4900117D7B /* GameResultsDelegate.swift */; };
 		5B7ABA262669662C00117D7B /* CellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7ABA252669662C00117D7B /* CellState.swift */; };
+		5B7ABA28266E7D4500117D7B /* CardsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7ABA27266E7D4500117D7B /* CardsDatasource.swift */; };
+		5B7ABA2B266E7EFD00117D7B /* InMemoryCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7ABA2A266E7EFD00117D7B /* InMemoryCardDataSource.swift */; };
 		5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */; };
 		5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B7266711FB007DF0A9 /* UIButton.swift */; };
 		5BCF54BA26671207007DF0A9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B926671207007DF0A9 /* UIColor.swift */; };
@@ -55,6 +57,8 @@
 		5B7ABA202669451800117D7B /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		5B7ABA2326694D4900117D7B /* GameResultsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsDelegate.swift; sourceTree = "<group>"; };
 		5B7ABA252669662C00117D7B /* CellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellState.swift; sourceTree = "<group>"; };
+		5B7ABA27266E7D4500117D7B /* CardsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDatasource.swift; sourceTree = "<group>"; };
+		5B7ABA2A266E7EFD00117D7B /* InMemoryCardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCardDataSource.swift; sourceTree = "<group>"; };
 		5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		5BCF54B7266711FB007DF0A9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5BCF54B926671207007DF0A9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -157,8 +161,17 @@
 			isa = PBXGroup;
 			children = (
 				5B7ABA2326694D4900117D7B /* GameResultsDelegate.swift */,
+				5B7ABA27266E7D4500117D7B /* CardsDatasource.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5B7ABA29266E7EE600117D7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B7ABA2A266E7EFD00117D7B /* InMemoryCardDataSource.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5BCF54B326670800007DF0A9 /* StartScreen */ = {
@@ -183,6 +196,7 @@
 		5BCF54BB26671669007DF0A9 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				5B7ABA29266E7EE600117D7B /* Services */,
 				5B7ABA2226694D3C00117D7B /* Protocols */,
 				DB63450F2667F1E500E02A00 /* Models */,
 				5B3FD57E2667A29C00ABB07E /* Views */,
@@ -280,6 +294,7 @@
 				5B3FD5882667A5C100ABB07E /* UIStoryboard+StoryboardNames.swift in Sources */,
 				5B3FD5822667A33100ABB07E /* ContentInfoViewController.swift in Sources */,
 				5B33FABE2665768800EA909E /* AppDelegate.swift in Sources */,
+				5B7ABA2B266E7EFD00117D7B /* InMemoryCardDataSource.swift in Sources */,
 				5BCF54BA26671207007DF0A9 /* UIColor.swift in Sources */,
 				5B7ABA2426694D4900117D7B /* GameResultsDelegate.swift in Sources */,
 				5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */,
@@ -289,6 +304,7 @@
 				5BCF54BD266716AE007DF0A9 /* GameViewController.swift in Sources */,
 				5B7ABA262669662C00117D7B /* CellState.swift in Sources */,
 				5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */,
+				5B7ABA28266E7D4500117D7B /* CardsDatasource.swift in Sources */,
 				5B3FD58B2667A5DF00ABB07E /* StoryBoardNames.swift in Sources */,
 				5B7ABA212669451800117D7B /* ResultCell.swift in Sources */,
 				5B3FD58D2667A67500ABB07E /* ViewControllerIdentifiers.swift in Sources */,
@@ -462,6 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.NanoChallenge-MyFirstApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -482,6 +499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.NanoChallenge-MyFirstApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -63,7 +63,7 @@ class GameResultsViewController: UIViewController {
     private func setNumberOfCorrectAnswers(for number: Int) {
         print("number: \(number)")
         
-        countLabel.text = "You got \(number)/10"
+        countLabel.text = "You got \(number)/\(cards.count)"
     }
     
     private func setTexts(correctAnswerCount: Int) {
@@ -117,7 +117,7 @@ extension GameResultsViewController: UITableViewDataSource {
             title: generateTitleForCard(at: indexPath),
             body: cards[indexPath.row].answerExplanation,
             isRight: cards[indexPath.row].userGetItRight,
-            image: cards[indexPath.row].cardImage,
+            image: UIImage(named: cards[indexPath.row].cardImage),
             state: cellState[indexPath.row]
         )
         

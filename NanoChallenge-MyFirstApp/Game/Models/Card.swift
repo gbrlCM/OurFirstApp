@@ -9,22 +9,20 @@ import Foundation
 import UIKit
 
 struct Card {
-    var subject: String
+    var subject: Subject
     var isCorrect: Bool
-    var cardImage: UIImage?
+    var cardImage: String
     var subjectExplanation: String
-    var answerExplanation: String
     var userGetItRight: Bool
     
-    static func generateCards() -> [Card] {
-        let subjects = Subject.allCases
-        
-        return subjects.map { subject -> Card in
-            
-            let rand = Int.random(in: 0...1)
-            print(rand)
-            if rand == 0 { return subject.correctCard() }
-            else { return subject.wrongCard() }
+    let wrongExplanation: String
+    let rightExplanation: String
+    
+    var answerExplanation: String {
+        if userGetItRight {
+            return rightExplanation
+        } else {
+            return wrongExplanation
         }
     }
 }
