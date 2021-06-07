@@ -17,8 +17,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var correctButton: UIButton!
     
     var cardCount: Int = 0
+    var datasource: CardsDatasource = InMemoryCardDatasource()
     var actualCard: Card? = nil
-    var cards = Card.generateCards()
+    var cards = InMemoryCardDatasource().fetch()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,9 @@ class GameViewController: UIViewController {
     
     private func initialSetup() {
         actualCard = cards[cardCount]
-        titleLabel.text = actualCard?.subject
+        titleLabel.text = actualCard!.subject.rawValue
         countLabel.text = "\(cardCount+1)/\(cards.count)"
-        cardImageView.image = actualCard?.cardImage
+        cardImageView.image = UIImage(named: actualCard!.cardImage)
     }
     
     private func setupActions() {
@@ -105,9 +106,11 @@ class GameViewController: UIViewController {
         }
         
         actualCard = cards[cardCount]
-        cardImageView.image = actualCard?.cardImage
-        titleLabel.text = actualCard?.subject
         
+        if let actualCard = self.actualCard {
+            cardImageView.image = UIImage(named: actualCard.cardImage)
+            titleLabel.text = actualCard.subject.rawValue
+        }
     }
     
     private func goToResultsScreen() {
@@ -124,7 +127,7 @@ class GameViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         guard let destination = segue.destination as? ContentInfoViewController else { return }
-        destination.titleString = cards[cardCount].subject
+        destination.titleString = cards[cardCount].subject.rawValue
         destination.bodyString = cards[cardCount].subjectExplanation
     }
     /*
@@ -141,7 +144,7 @@ class GameViewController: UIViewController {
 
 extension GameViewController: GameResultsDelegate {
     func newGame() {
-        cards = Card.generateCards()
+        cards = datasource.fetch()
         cardCount = 0
         initialSetup()
         self.dismiss(animated: true, completion: nil)
