@@ -51,18 +51,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="dRq-a8-1Of">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-RU-opE">
                                 <rect key="frame" x="16" y="203" width="382" height="659"/>
-                                <color key="backgroundColor" name="BackgroundColor"/>
-                            </tableView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0sb-Sg-3f9">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iZO-3w-qLz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="0vk-Sq-4I8"/>
-                            <constraint firstItem="dRq-a8-1Of" firstAttribute="top" secondItem="7xp-uC-yGV" secondAttribute="bottom" constant="32" id="3X8-Rb-dlD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dRq-a8-1Of" secondAttribute="trailing" constant="16" id="4Gl-MW-QML"/>
-                            <constraint firstItem="dRq-a8-1Of" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5zP-eV-hGQ"/>
                             <constraint firstItem="caT-6I-Pvl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="6Vf-cQ-dwm"/>
                             <constraint firstItem="6g4-wZ-cZP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="7ou-7b-Z3a"/>
                             <constraint firstItem="7xp-uC-yGV" firstAttribute="top" secondItem="RIm-aL-J0w" secondAttribute="bottom" id="8zI-BW-DUr"/>
@@ -70,12 +74,15 @@
                             <constraint firstItem="RIm-aL-J0w" firstAttribute="top" secondItem="iZO-3w-qLz" secondAttribute="bottom" constant="8" id="Cvx-fW-CmE"/>
                             <constraint firstItem="caT-6I-Pvl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OU4-i0-AdW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6g4-wZ-cZP" secondAttribute="trailing" constant="16" id="PYJ-Y8-v8y"/>
+                            <constraint firstItem="MRN-RU-opE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="SM9-MG-Ypc"/>
                             <constraint firstItem="7xp-uC-yGV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="Tsc-aS-asq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7xp-uC-yGV" secondAttribute="trailing" constant="64" id="VVz-0j-Rqk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MRN-RU-opE" secondAttribute="trailing" constant="16" id="Ysi-HU-cDq"/>
                             <constraint firstItem="RIm-aL-J0w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="dkt-Rk-bEQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iZO-3w-qLz" secondAttribute="trailing" constant="64" id="eaY-h3-PBE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MRN-RU-opE" secondAttribute="bottom" id="feO-ms-Wcs"/>
+                            <constraint firstItem="MRN-RU-opE" firstAttribute="top" secondItem="7xp-uC-yGV" secondAttribute="bottom" constant="32" id="gwm-Fo-hGg"/>
                             <constraint firstItem="iZO-3w-qLz" firstAttribute="top" secondItem="caT-6I-Pvl" secondAttribute="bottom" constant="16" id="jEq-rs-P0X"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="dRq-a8-1Of" secondAttribute="bottom" id="v4M-0z-KbN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -84,7 +91,7 @@
                         <outlet property="exitButton" destination="caT-6I-Pvl" id="xJc-3t-DK6"/>
                         <outlet property="jokeLabel" destination="7xp-uC-yGV" id="9aw-NV-dqy"/>
                         <outlet property="newGameButton" destination="6g4-wZ-cZP" id="OrO-0A-DXw"/>
-                        <outlet property="resultsTableView" destination="dRq-a8-1Of" id="08g-fN-xjO"/>
+                        <outlet property="resultsCollectionView" destination="MRN-RU-opE" id="J4B-R5-rhb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,6 +108,9 @@
         <namedColor name="BackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
