@@ -8,7 +8,8 @@ import UIKit
 
 class GameResultsViewController: UIViewController {
     
-    @IBOutlet weak var resultsTableView: UITableView!
+    
+    @IBOutlet weak var resultsCollectionView: UICollectionView!
     @IBOutlet weak var congratsLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var jokeLabel: UILabel!
@@ -35,10 +36,13 @@ class GameResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultsTableView.register(ResultCell.self, forCellReuseIdentifier: rowIdentifier)
-        resultsTableView.dataSource = self
-        resultsTableView.delegate = self
-        resultsTableView.rowHeight = 300
+        resultsCollectionView.register(ResultCell.self, forCellWithReuseIdentifier: rowIdentifier)
+        resultsCollectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width, height: 300)
+        layout.minimumLineSpacing = 15
+        resultsCollectionView.collectionViewLayout = layout
+        
         exitButton.setTitleColor(.gray ,for: .highlighted)
         newGameButton.setTitleColor(.gray ,for: .highlighted)
         initialSetup()
@@ -85,6 +89,10 @@ class GameResultsViewController: UIViewController {
         }
     }
     
+//    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+//
+//    }
+    
     private func initialSetup() {
         let number = cards
             .filter { $0.userGetItRight == true }
@@ -106,26 +114,26 @@ class GameResultsViewController: UIViewController {
     
 }
 // MARK: - UICollectionViewDataSource
-extension GameResultsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension GameResultsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: rowIdentifier, for: indexPath) as! ResultCell
-        cell.setup(
-            title: generateTitleForCard(at: indexPath),
-            body: cards[indexPath.row].answerExplanation,
-            isRight: cards[indexPath.row].userGetItRight,
-            image: UIImage(named: cards[indexPath.row].cardImage),
-            state: cellState[indexPath.row]
-        )
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: rowIdentifier, for: indexPath) as! ResultCell
         
+        cell.setup(title: generateTitleForCard(at: indexPath),
+                   body: cards[indexPath.row].answerExplanation,
+                   isRight: cards[indexPath.row].userGetItRight,
+                   image: UIImage(named: cards[indexPath.row].cardImage),
+                   state: cellState[indexPath.row])
+        cell.clipsToBounds = true
         
         return cell
     }
-        
-}
-extension GameResultsViewController: UITableViewDelegate {
+    
+    
     
 }
+
+

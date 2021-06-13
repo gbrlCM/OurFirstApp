@@ -8,20 +8,20 @@
 import Foundation
 import UIKit
 
-class ResultCell: UITableViewCell {
+class ResultCell: UICollectionViewCell {
     
-    lazy var container: UIView = {
+    private lazy var container: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
         return container
     }()
     
-    lazy var textContainer: UIView = {
+    private lazy var textContainer: UIView = {
         
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.layer.shadowColor = UIColor.black.cgColor
-        container.layer.shadowOffset = .init(width: 0, height: 2)
+        container.layer.shadowOffset = .init(width: 2, height: 2)
         container.clipsToBounds = true
         container.layer.shadowRadius = 2
         container.layer.shadowOpacity = 0.3
@@ -31,7 +31,7 @@ class ResultCell: UITableViewCell {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip)))
         return container
     }()
-    lazy var imageContainer: UIView = {
+    private lazy var imageContainer: UIView = {
         let container = UIView(frame: .zero)
         container.isHidden = true
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class ResultCell: UITableViewCell {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip)))
         return container
     }()
-    lazy var cardImage: UIImageView = {
+    private lazy var cardImage: UIImageView = {
         let image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -54,24 +54,24 @@ class ResultCell: UITableViewCell {
         
         return image
     }()
-    lazy var title: UILabel = {
+    private lazy var title: UILabel = {
         let title = UILabel(frame: .zero)
         title.setContentHuggingPriority(.defaultLow, for: .horizontal)
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
-    lazy var body: UILabel = {
+    private lazy var body: UILabel = {
         let body = UILabel(frame: .zero)
         body.setContentHuggingPriority(.defaultLow, for: .horizontal)
         body.translatesAutoresizingMaskIntoConstraints = false
         return body
     }()
     
-    var state: CellState = CellState()
+    private var state: CellState = CellState()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.isUserInteractionEnabled = true
         self.backgroundColor = .none
         contentView.addSubview(container)
@@ -89,7 +89,6 @@ class ResultCell: UITableViewCell {
         title.font = .boldSystemFont(ofSize: 26)
         body.font = .systemFont(ofSize: 15)
         body.numberOfLines = 0
-        
     }
     
     required init?(coder: NSCoder) {
@@ -153,7 +152,7 @@ class ResultCell: UITableViewCell {
         
         let textContainerConstraints: [NSLayoutConstraint] = [
             textContainer.topAnchor.constraint(equalTo: container.topAnchor),
-            textContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16),
+            textContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor),
             textContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             textContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor),
         ]
@@ -161,7 +160,7 @@ class ResultCell: UITableViewCell {
         
         let imageContainerConstraints: [NSLayoutConstraint] = [
             imageContainer.topAnchor.constraint(equalTo: container.topAnchor),
-            imageContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16),
+            imageContainer.bottomAnchor.constraint(equalTo: container.bottomAnchor),
             imageContainer.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             imageContainer.trailingAnchor.constraint(equalTo: container.trailingAnchor),
         ]
