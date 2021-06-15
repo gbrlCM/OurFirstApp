@@ -39,9 +39,10 @@ class GameResultsViewController: UIViewController {
         resultsCollectionView.register(ResultCell.self, forCellWithReuseIdentifier: rowIdentifier)
         resultsCollectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width, height: 300)
+        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width, height: resultsCollectionView.bounds.height * 0.45)
         layout.minimumLineSpacing = 15
         resultsCollectionView.collectionViewLayout = layout
+        resultsCollectionView.showsVerticalScrollIndicator = false
         
         exitButton.setTitleColor(.gray ,for: .highlighted)
         newGameButton.setTitleColor(.gray ,for: .highlighted)
