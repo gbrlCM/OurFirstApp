@@ -106,9 +106,9 @@ class ResultCell: UICollectionViewCell {
         self.state = state
         
         if isRight {
-            self.title.textColor = .systemGreen
+            self.title.textColor = .typoopsGreen
         } else {
-            self.title.textColor = .systemRed
+            self.title.textColor = .typoopsRed
         }
         
         if state.isOpen {

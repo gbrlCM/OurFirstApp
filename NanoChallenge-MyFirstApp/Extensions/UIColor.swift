@@ -20,9 +20,19 @@ extension UIColor {
          
          https://developer.apple.com/documentation/uikit/uicolor
          */
-        let darkerColor = UIColor(red: color[0] - coeficient, green: color[1] - coeficient, blue: color[2] - coeficient, alpha: 1)
+        print(color)
+        if color.count > 2 {
+            let darkerColor = UIColor(red: color[0] - coeficient, green: color[1] - coeficient, blue: color[2] - coeficient, alpha: 1)
+            
+            return darkerColor
+        } else {
+            let darkerColor = UIColor(red: color[0] - coeficient, green: color[0] - coeficient, blue: color[0] - coeficient, alpha: 1)
+            
+            return darkerColor
+        }
         
-        return darkerColor
+        
+       
         
     }
     
@@ -41,5 +51,11 @@ extension UIColor {
     
     static var cellColor: UIColor {
         UIColor(named: "CellColor")!
+    }
+    static var typoopsGreen: UIColor {
+        UIColor(named: "ShittyGreen")!
+    }
+    static var typoopsRed: UIColor {
+        UIColor(named: "BloodShit")!
     }
 }

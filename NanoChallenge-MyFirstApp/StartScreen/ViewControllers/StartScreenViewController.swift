@@ -22,9 +22,9 @@ class StartScreenViewController: UIViewController {
         startButton.layer.cornerRadius = 16
         startButton.clipsToBounds = true
         startButton.backgroundColor = .none
-        startButton.setBackgroundColor(.accent, for: .normal)
-        startButton.setBackgroundColor(UIColor.accent.darken(by: 0.07), for: .highlighted)
-        startButton.setTitleColor(.white, for: .normal)
+        startButton.setBackgroundColor(.white, for: .normal)
+        startButton.setBackgroundColor(UIColor.white.darken(by: 0.07), for: .highlighted)
+        startButton.setTitleColor(.accent, for: .normal)
         startButton.setTitleColor(.gray, for: .highlighted)
     }
     
