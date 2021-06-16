@@ -32,6 +32,7 @@
 		5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B7266711FB007DF0A9 /* UIButton.swift */; };
 		5BCF54BA26671207007DF0A9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54B926671207007DF0A9 /* UIColor.swift */; };
 		5BCF54BD266716AE007DF0A9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF54BC266716AE007DF0A9 /* GameViewController.swift */; };
+		5BEAF45F26798BF900D7BD2C /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */; };
 		DB6345112667F20000E02A00 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6345102667F20000E02A00 /* Card.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		5BCF54B7266711FB007DF0A9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5BCF54B926671207007DF0A9 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5BCF54BC266716AE007DF0A9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		DB6345102667F20000E02A00 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5BCF54B426670815007DF0A9 /* StartScreenViewController.swift */,
+				5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				5B33FABE2665768800EA909E /* AppDelegate.swift in Sources */,
 				5B7ABA2B266E7EFD00117D7B /* InMemoryCardDataSource.swift in Sources */,
 				5BCF54BA26671207007DF0A9 /* UIColor.swift in Sources */,
+				5BEAF45F26798BF900D7BD2C /* HowToPlayViewController.swift in Sources */,
 				5B7ABA2426694D4900117D7B /* GameResultsDelegate.swift in Sources */,
 				5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */,
 				5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */,
