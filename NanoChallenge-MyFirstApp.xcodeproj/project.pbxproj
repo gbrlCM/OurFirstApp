@@ -35,6 +35,7 @@
 		5BD9C8B2267A60C900765CDB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9C8B1267A60C900765CDB /* CardView.swift */; };
 		5BD9C8B4267A6AA200765CDB /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9C8B3267A6AA200765CDB /* FeedbackView.swift */; };
 		5BEAF45F26798BF900D7BD2C /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */; };
+		5BF648D7267A839D00B293B4 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF648D6267A839D00B293B4 /* GameService.swift */; };
 		DB6345112667F20000E02A00 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6345102667F20000E02A00 /* Card.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		5BD9C8B1267A60C900765CDB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5BD9C8B3267A6AA200765CDB /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		5BF648D6267A839D00B293B4 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		DB6345102667F20000E02A00 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7ABA2A266E7EFD00117D7B /* InMemoryCardDataSource.swift */,
+				5BF648D6267A839D00B293B4 /* GameService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				5B33FAC02665768800EA909E /* SceneDelegate.swift in Sources */,
 				5BCF54B526670815007DF0A9 /* StartScreenViewController.swift in Sources */,
 				5B3FD5862667A54600ABB07E /* GameResultsViewController.swift in Sources */,
+				5BF648D7267A839D00B293B4 /* GameService.swift in Sources */,
 				DB6345112667F20000E02A00 /* Card.swift in Sources */,
 				5BCF54BD266716AE007DF0A9 /* GameViewController.swift in Sources */,
 				5B7ABA262669662C00117D7B /* CellState.swift in Sources */,
@@ -498,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.NanoChallenge-MyFirstApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -519,7 +523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gbrlcm.NanoChallenge-MyFirstApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

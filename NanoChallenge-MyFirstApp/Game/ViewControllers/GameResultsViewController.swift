@@ -39,7 +39,7 @@ class GameResultsViewController: UIViewController {
         resultsCollectionView.register(ResultCell.self, forCellWithReuseIdentifier: rowIdentifier)
         resultsCollectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width, height: resultsCollectionView.bounds.height * 0.45)
+        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width-50, height: resultsCollectionView.bounds.height * 0.45)
         layout.minimumLineSpacing = 15
         resultsCollectionView.collectionViewLayout = layout
         resultsCollectionView.showsVerticalScrollIndicator = false
@@ -67,7 +67,6 @@ class GameResultsViewController: UIViewController {
     }
     
     private func setNumberOfCorrectAnswers(for number: Int) {
-        print("number: \(number)")
         
         countLabel.text = "You got \(number)/\(cards.count)"
     }

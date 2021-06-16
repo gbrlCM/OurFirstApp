@@ -20,7 +20,6 @@ extension UIColor {
          
          https://developer.apple.com/documentation/uikit/uicolor
          */
-        print(color)
         if color.count > 2 {
             let darkerColor = UIColor(red: color[0] - coeficient, green: color[1] - coeficient, blue: color[2] - coeficient, alpha: 1)
             
