@@ -124,7 +124,7 @@ extension GameResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: rowIdentifier, for: indexPath) as! ResultCell
         
-        cell.setup(title: generateTitleForCard(at: indexPath),
+        cell.setup(title: cards[indexPath.row].subject.rawValue,
                    body: cards[indexPath.row].answerExplanation,
                    isRight: cards[indexPath.row].userGetItRight,
                    image: UIImage(named: cards[indexPath.row].cardImage),

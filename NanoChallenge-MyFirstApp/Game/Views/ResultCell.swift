@@ -10,6 +10,26 @@ import UIKit
 
 class ResultCell: UICollectionViewCell {
     
+    private lazy var expandButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("See more", for: .normal)
+        button.setTitleColor(.accent, for: .normal)
+        button.setTitleColor(UIColor.accent.darken(by: 0.07), for: .highlighted)
+        button.addAction(UIAction(handler: {_ in
+            self.flip()
+        }), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var answerImage: UIImageView = {
+       let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+        
+    }()
+    
     private lazy var container: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +49,9 @@ class ResultCell: UICollectionViewCell {
         container.backgroundColor = .cellColor
         container.layer.cornerRadius = 8
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flip)))
+        container.backgroundColor = .cellColor
+        container.layer.cornerRadius = 8
+    
         return container
     }()
     private lazy var imageContainer: UIView = {
@@ -58,12 +81,15 @@ class ResultCell: UICollectionViewCell {
         let title = UILabel(frame: .zero)
         title.setContentHuggingPriority(.defaultLow, for: .horizontal)
         title.translatesAutoresizingMaskIntoConstraints = false
+        title.font = .boldSystemFont(ofSize: 26)
         return title
     }()
     private lazy var body: UILabel = {
         let body = UILabel(frame: .zero)
         body.setContentHuggingPriority(.defaultLow, for: .horizontal)
         body.translatesAutoresizingMaskIntoConstraints = false
+        body.font = .systemFont(ofSize: 15)
+        body.numberOfLines = 0
         return body
     }()
     
@@ -80,15 +106,10 @@ class ResultCell: UICollectionViewCell {
         imageContainer.addSubview(cardImage)
         textContainer.addSubview(title)
         textContainer.addSubview(body)
+        textContainer.addSubview(answerImage)
+        textContainer.addSubview(expandButton)
         
         setupConstraints()
-        
-        textContainer.backgroundColor = .cellColor
-        textContainer.layer.cornerRadius = 8
-        
-        title.font = .boldSystemFont(ofSize: 26)
-        body.font = .systemFont(ofSize: 15)
-        body.numberOfLines = 0
     }
     
     required init?(coder: NSCoder) {
@@ -105,10 +126,15 @@ class ResultCell: UICollectionViewCell {
         self.body.text = body
         self.state = state
         
+        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 26, weight: .bold)
         if isRight {
             self.title.textColor = .typoopsGreen
+            self.answerImage.image = UIImage(systemName: "checkmark.circle", withConfiguration: imageConfiguration)
+            self.answerImage.tintColor = .typoopsGreen
         } else {
             self.title.textColor = .typoopsRed
+            self.answerImage.image = UIImage(systemName: "xmark.circle", withConfiguration: imageConfiguration)
+            self.answerImage.tintColor = .typoopsRed
         }
         
         if state.isOpen {
@@ -176,7 +202,6 @@ class ResultCell: UICollectionViewCell {
         
         let titleConstraints: [NSLayoutConstraint] = [
             title.topAnchor.constraint(equalTo: textContainer.topAnchor, constant: 16),
-            title.leadingAnchor.constraint(equalTo: textContainer.leadingAnchor, constant: 16),
             title.trailingAnchor.constraint(equalTo: textContainer.trailingAnchor, constant: -16)
         ]
         NSLayoutConstraint.activate(titleConstraints)
@@ -187,5 +212,18 @@ class ResultCell: UICollectionViewCell {
             body.trailingAnchor.constraint(equalTo: textContainer.trailingAnchor, constant: -16)
         ]
         NSLayoutConstraint.activate(bodyConstraints)
+        
+        let answerImageConstraints: [NSLayoutConstraint] = [
+            answerImage.topAnchor.constraint(equalTo: textContainer.topAnchor, constant: 16),
+            answerImage.leadingAnchor.constraint(equalTo: textContainer.leadingAnchor, constant: 16),
+            answerImage.trailingAnchor.constraint(equalTo: title.leadingAnchor, constant: -8),
+        ]
+        NSLayoutConstraint.activate(answerImageConstraints)
+        
+        let expandButtonConstraints: [NSLayoutConstraint] = [
+            expandButton.bottomAnchor.constraint(equalTo: textContainer.bottomAnchor, constant: -16),
+            expandButton.trailingAnchor.constraint(equalTo: textContainer.trailingAnchor, constant: -16),
+        ]
+        NSLayoutConstraint.activate(expandButtonConstraints)
     }
 }
