@@ -126,7 +126,6 @@
 				5BCF54BC266716AE007DF0A9 /* GameViewController.swift */,
 				5B3FD5812667A33100ABB07E /* ContentInfoViewController.swift */,
 				5B3FD5852667A54600ABB07E /* GameResultsViewController.swift */,
-				5BF648D8267A934500B293B4 /* UIView+IBInspectable.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				5BCF54B7266711FB007DF0A9 /* UIButton.swift */,
+				5BF648D8267A934500B293B4 /* UIView+IBInspectable.swift */,
 				5BCF54B926671207007DF0A9 /* UIColor.swift */,
 				5B3FD5872667A5C100ABB07E /* UIStoryboard+StoryboardNames.swift */,
 			);
