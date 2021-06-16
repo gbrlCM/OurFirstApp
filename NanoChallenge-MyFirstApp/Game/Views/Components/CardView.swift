@@ -30,15 +30,6 @@ class CardView: UIView {
         }
     }
     
-    @IBInspectable
-    var cornerRadius: CGFloat {
-        get {
-            return self.layer.cornerRadius
-        } set (radiusInput) {
-            self.layer.cornerRadius = radiusInput
-        }
-    }
-    
     //MARK: Inits
     override init(frame: CGRect) {
         super.init(frame: frame)

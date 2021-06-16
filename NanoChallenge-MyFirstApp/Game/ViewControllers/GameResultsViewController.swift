@@ -90,10 +90,6 @@ class GameResultsViewController: UIViewController {
         }
     }
     
-//    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-//
-//    }
-    
     private func initialSetup() {
         let number = cards
             .filter { $0.userGetItRight == true }
