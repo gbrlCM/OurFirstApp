@@ -70,12 +70,12 @@ class GameViewController: UIViewController {
         wrongButton.layer.cornerRadius = wrongButton.frame.height/8
         wrongButton.clipsToBounds = true
         wrongButton.backgroundColor = .none
-        wrongButton.setBackgroundColor(.systemPink, for: .normal)
-        wrongButton.setBackgroundColor(UIColor.systemPink.darken(by: 0.07), for: .highlighted)
+        wrongButton.setBackgroundColor(.typoopsRed, withAlpha: 0.2, for: .normal)
+        wrongButton.setBackgroundColor(UIColor.typoopsRed.darken(by: 0.07), withAlpha: 0.2, for: .highlighted)
         wrongButton.setTitleColor(.gray, for: .highlighted)
         
-        correctButton.setBackgroundColor(.systemGreen, for: .normal)
-        correctButton.setBackgroundColor(UIColor.systemGreen.darken(by: 0.07), for: .highlighted)
+        correctButton.setBackgroundColor(.typoopsGreen, withAlpha: 0.2, for: .normal)
+        correctButton.setBackgroundColor(UIColor.typoopsGreen.darken(by: 0.07), withAlpha: 0.2, for: .highlighted)
         correctButton.setTitleColor(.gray, for: .highlighted)
         correctButton.clipsToBounds = true
         correctButton.layer.cornerRadius = correctButton.frame.height/8
