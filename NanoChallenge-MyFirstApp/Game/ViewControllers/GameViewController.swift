@@ -9,10 +9,11 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var feedbackView: FeedbackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
-    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardImageView: CardView!
     @IBOutlet weak var wrongButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
     
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
     }
     
     private func initialSetup() {
+        feedbackView.layer.opacity = 0
         actualCard = cards[cardCount]
         titleLabel.text = actualCard!.subject.rawValue
         countLabel.text = "\(cardCount+1)/\(cards.count)"
@@ -95,8 +97,15 @@ class GameViewController: UIViewController {
         if card.isCorrect == correctAnswer {
             card.userGetItRight = true
             cards[cardCount] = card
-        }
+            displayFeedbackView(isUserCorrect: true)
         
+        } else {
+            displayFeedbackView(isUserCorrect: false)
+        }
+    
+    }
+    
+    private func handleAnswer() {
         cardCount += 1
         countLabel.text = "\(cardCount+1)/\(cards.count)"
         
@@ -111,6 +120,23 @@ class GameViewController: UIViewController {
             cardImageView.image = UIImage(named: actualCard.cardImage)
             titleLabel.text = actualCard.subject.rawValue
         }
+    }
+    
+    private func displayFeedbackView(isUserCorrect: Bool) {
+        let image: UIImage?
+        let configuration = UIImage.SymbolConfiguration(weight: .bold)
+        
+        if isUserCorrect {
+            image = UIImage(systemName: "checkmark", withConfiguration: configuration)
+            feedbackView.tintColor = .typoopsGreen
+            
+        } else {
+            image = UIImage(systemName: "xmark", withConfiguration: configuration)
+            feedbackView.tintColor = .typoopsRed
+        }
+        
+        feedbackView.symbol = image
+        feedbackView.animate { [self] in handleAnswer()}
     }
     
     private func goToResultsScreen() {

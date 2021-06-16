@@ -3,15 +3,16 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--How To Play View Controller-->
         <scene sceneID="6Xy-Bm-UY9">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-Wzb-wP-0t3" id="Wzb-wP-0t3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-Wzb-wP-0t3" id="Wzb-wP-0t3" customClass="HowToPlayViewController" customModule="NanoChallenge_MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PWQ-lP-3Cc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,45 +21,65 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64G-kN-NSn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to play Typoops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bw-Oq-QBl">
-                                                <rect key="frame" x="32" y="16" width="350" height="38.5"/>
+                                                <rect key="frame" x="32" y="54.5" width="350" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-Vt-1Q2">
-                                                <rect key="frame" x="32" y="86.5" width="350" height="81.5"/>
+                                                <rect key="frame" x="32" y="125" width="350" height="81.5"/>
                                                 <string key="text">Typoops is a game about the correct usage of typography. When you hit play you will be shown example of text and you must decide if its a correct or wrong use of typography.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.11" translatesAutoresizingMaskIntoConstraints="NO" id="Saf-8g-ebu">
-                                                <rect key="frame" x="32" y="184" width="350" height="542"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CardTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="Saf-8g-ebu">
+                                                <rect key="frame" x="32" y="222.5" width="350" height="350"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Saf-8g-ebu" secondAttribute="height" multiplier="1:1" id="Qt0-Ln-lsV"/>
+                                                </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will answer 10 questions, at the end of it you will see your results and a explanation about why is it wrong or right." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlU-gI-Fyp">
-                                                <rect key="frame" x="32" y="742" width="350" height="61"/>
+                                                <rect key="frame" x="32" y="588.5" width="350" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.34" translatesAutoresizingMaskIntoConstraints="NO" id="XKn-wM-iUh">
-                                                <rect key="frame" x="32" y="819" width="350" height="129"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="XKn-wM-iUh">
+                                                <rect key="frame" x="32" y="665.5" width="350" height="116.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="XKn-wM-iUh" secondAttribute="height" multiplier="3:1" id="2x5-3G-3KD"/>
+                                                </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can leave the game at any time at the X and the ? to see information abount the content asked." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXu-z5-fb4">
-                                                <rect key="frame" x="32" y="964" width="350" height="61"/>
+                                                <rect key="frame" x="32" y="798" width="350" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-06-02 at 22.35.46" translatesAutoresizingMaskIntoConstraints="NO" id="Wwi-wu-7GL">
-                                                <rect key="frame" x="32" y="1076" width="350" height="66"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavigationButtonsTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="Wwi-wu-7GL">
+                                                <rect key="frame" x="32" y="910" width="350" height="87.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Wwi-wu-7GL" secondAttribute="height" multiplier="4:1" id="inz-ke-Tw2"/>
+                                                </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMn-Be-wbF">
+                                                <rect key="frame" x="361" y="8" width="37" height="30"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" name="AccentColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doneButtonPressed:" destination="Wzb-wP-0t3" eventType="touchUpInside" id="oe0-67-Yeg"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WMn-Be-wbF" secondAttribute="trailing" constant="16" id="2wL-sZ-88X"/>
                                             <constraint firstItem="Saf-8g-ebu" firstAttribute="leading" secondItem="H5x-Vt-1Q2" secondAttribute="leading" id="4sZ-7G-52Y"/>
                                             <constraint firstItem="2Bw-Oq-QBl" firstAttribute="leading" secondItem="64G-kN-NSn" secondAttribute="leading" constant="32" id="6Jb-hR-bSj"/>
                                             <constraint firstItem="XKn-wM-iUh" firstAttribute="top" secondItem="xlU-gI-Fyp" secondAttribute="bottom" constant="16" id="6zo-GP-McB"/>
@@ -66,21 +87,22 @@
                                             <constraint firstItem="cXu-z5-fb4" firstAttribute="top" secondItem="XKn-wM-iUh" secondAttribute="bottom" constant="16" id="9at-WT-NcI"/>
                                             <constraint firstItem="xlU-gI-Fyp" firstAttribute="leading" secondItem="Saf-8g-ebu" secondAttribute="leading" id="B6d-pR-PpK"/>
                                             <constraint firstItem="cXu-z5-fb4" firstAttribute="trailing" secondItem="XKn-wM-iUh" secondAttribute="trailing" id="BVX-Yt-9wd"/>
-                                            <constraint firstItem="2Bw-Oq-QBl" firstAttribute="top" secondItem="64G-kN-NSn" secondAttribute="top" constant="16" id="C3k-Im-rWK"/>
                                             <constraint firstItem="Saf-8g-ebu" firstAttribute="trailing" secondItem="H5x-Vt-1Q2" secondAttribute="trailing" id="FA3-cz-nus"/>
                                             <constraint firstItem="Wwi-wu-7GL" firstAttribute="trailing" secondItem="cXu-z5-fb4" secondAttribute="trailing" id="IiS-uN-Tqn"/>
                                             <constraint firstItem="xlU-gI-Fyp" firstAttribute="trailing" secondItem="Saf-8g-ebu" secondAttribute="trailing" id="Kz1-t9-qvn"/>
                                             <constraint firstItem="H5x-Vt-1Q2" firstAttribute="leading" secondItem="2Bw-Oq-QBl" secondAttribute="leading" id="MZC-uA-ptg"/>
                                             <constraint firstItem="H5x-Vt-1Q2" firstAttribute="top" secondItem="2Bw-Oq-QBl" secondAttribute="bottom" constant="32" id="RXk-0e-I96"/>
                                             <constraint firstItem="H5x-Vt-1Q2" firstAttribute="trailing" secondItem="2Bw-Oq-QBl" secondAttribute="trailing" id="aPb-DY-7tC"/>
+                                            <constraint firstItem="WMn-Be-wbF" firstAttribute="top" secondItem="64G-kN-NSn" secondAttribute="top" constant="8" id="eY4-Vv-6jb"/>
                                             <constraint firstItem="XKn-wM-iUh" firstAttribute="trailing" secondItem="xlU-gI-Fyp" secondAttribute="trailing" id="hSo-EU-1JX"/>
+                                            <constraint firstItem="WMn-Be-wbF" firstAttribute="bottom" secondItem="2Bw-Oq-QBl" secondAttribute="top" constant="-16.5" id="imx-WV-3Ab"/>
                                             <constraint firstItem="Wwi-wu-7GL" firstAttribute="leading" secondItem="cXu-z5-fb4" secondAttribute="leading" id="kzd-tY-kp8"/>
                                             <constraint firstAttribute="trailing" secondItem="2Bw-Oq-QBl" secondAttribute="trailing" constant="32" id="lLs-Yd-9R5"/>
                                             <constraint firstItem="Saf-8g-ebu" firstAttribute="top" secondItem="H5x-Vt-1Q2" secondAttribute="bottom" constant="16" id="nBT-hj-TAu"/>
                                             <constraint firstItem="XKn-wM-iUh" firstAttribute="leading" secondItem="xlU-gI-Fyp" secondAttribute="leading" id="oDC-hh-0mZ"/>
                                             <constraint firstItem="xlU-gI-Fyp" firstAttribute="top" secondItem="Saf-8g-ebu" secondAttribute="bottom" constant="16" id="p9l-YM-zIz"/>
                                             <constraint firstItem="Wwi-wu-7GL" firstAttribute="top" secondItem="cXu-z5-fb4" secondAttribute="bottom" constant="51" id="r7N-4k-CCE"/>
-                                            <constraint firstAttribute="height" constant="1500" id="vLL-6D-Wlv"/>
+                                            <constraint firstAttribute="height" constant="1200" id="vLL-6D-Wlv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -108,13 +130,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6M-xb-Kbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338" y="25"/>
+            <point key="canvasLocation" x="1337.68115942029" y="24.776785714285712"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Screen Shot 2021-06-02 at 22.35.11" width="340" height="542"/>
-        <image name="Screen Shot 2021-06-02 at 22.35.34" width="385" height="129"/>
-        <image name="Screen Shot 2021-06-02 at 22.35.46" width="385" height="66"/>
+        <image name="ButtonTutorial" width="750" height="164"/>
+        <image name="CardTutorial" width="798" height="1226"/>
+        <image name="NavigationButtonsTutorial" width="750" height="164"/>
+        <namedColor name="AccentColor">
+            <color red="0.6940000057220459" green="0.32199999690055847" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
