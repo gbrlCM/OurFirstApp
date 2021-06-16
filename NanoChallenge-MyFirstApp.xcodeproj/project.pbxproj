@@ -36,6 +36,7 @@
 		5BD9C8B4267A6AA200765CDB /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD9C8B3267A6AA200765CDB /* FeedbackView.swift */; };
 		5BEAF45F26798BF900D7BD2C /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */; };
 		5BF648D7267A839D00B293B4 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF648D6267A839D00B293B4 /* GameService.swift */; };
+		5BF648D9267A934500B293B4 /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF648D8267A934500B293B4 /* UIView+IBInspectable.swift */; };
 		DB6345112667F20000E02A00 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6345102667F20000E02A00 /* Card.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		5BD9C8B3267A6AA200765CDB /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		5BEAF45E26798BF900D7BD2C /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		5BF648D6267A839D00B293B4 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		5BF648D8267A934500B293B4 /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		DB6345102667F20000E02A00 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				5BCF54BC266716AE007DF0A9 /* GameViewController.swift */,
 				5B3FD5812667A33100ABB07E /* ContentInfoViewController.swift */,
 				5B3FD5852667A54600ABB07E /* GameResultsViewController.swift */,
+				5BF648D8267A934500B293B4 /* UIView+IBInspectable.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				5B7ABA262669662C00117D7B /* CellState.swift in Sources */,
 				5BD9C8B4267A6AA200765CDB /* FeedbackView.swift in Sources */,
 				5BD9C8B2267A60C900765CDB /* CardView.swift in Sources */,
+				5BF648D9267A934500B293B4 /* UIView+IBInspectable.swift in Sources */,
 				5BCF54B8266711FB007DF0A9 /* UIButton.swift in Sources */,
 				5B7ABA28266E7D4500117D7B /* CardsDatasource.swift in Sources */,
 				5B3FD58B2667A5DF00ABB07E /* StoryBoardNames.swift in Sources */,
