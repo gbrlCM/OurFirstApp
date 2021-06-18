@@ -40,10 +40,10 @@ class GameService {
         cards[cardCount].userGetItRight = userIsCorrect(comparedTo: correctAnswer)
     }
     
-    func goToNextCard(endGameAction: @escaping () -> Void,  uiUpdates: @escaping (_ card: Card, _ progress: String) -> Void) {
-        cardCount += 1
-        //countLabel.text = "\(cardCount+1)/\(cards.count)"
+    func goToNextCard( endGameAction: @escaping () -> Void,
+                       uiUpdates: @escaping (_ card: Card, _ progress: String) -> Void ) {
         
+        cardCount += 1
         guard cardCount < cards.count else {
             endGameAction()
             return
@@ -52,8 +52,6 @@ class GameService {
         actualCard = cards[cardCount]
         
         if let actualCard = self.actualCard {
-//            cardImageView.image = UIImage(named: actualCard.cardImage)
-//            titleLabel.text = actualCard.subject.rawValue
             uiUpdates(actualCard, "\(cardCount+1)/\(cards.count)")
         }
     }

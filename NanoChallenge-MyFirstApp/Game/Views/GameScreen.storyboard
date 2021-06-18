@@ -86,7 +86,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZA-Xj-lh9" customClass="FeedbackView" customModule="NanoChallenge_MyFirstApp" customModuleProvider="target">
                                 <rect key="frame" x="150" y="404" width="128" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <color key="tintColor" name="ShittyGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="iXL-6J-8tM"/>
