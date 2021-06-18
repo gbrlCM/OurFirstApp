@@ -9,17 +9,15 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var feedbackView: FeedbackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
-    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardImageView: CardView!
     @IBOutlet weak var wrongButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
     
-    var cardCount: Int = 0
-    var datasource: CardsDatasource = InMemoryCardDatasource()
-    var actualCard: Card? = nil
-    var cards = InMemoryCardDatasource().fetch()
+    var gameService = GameService(datasource: InMemoryCardDatasource())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +29,12 @@ class GameViewController: UIViewController {
     }
     
     private func initialSetup() {
-        actualCard = cards[cardCount]
-        titleLabel.text = actualCard!.subject.rawValue
-        countLabel.text = "\(cardCount+1)/\(cards.count)"
-        cardImageView.image = UIImage(named: actualCard!.cardImage)
+        feedbackView.layer.opacity = 0
+        gameService.initialize()
+        
+        titleLabel.text = gameService.actualCard!.subject.rawValue
+        countLabel.text = "1/\(gameService.numberOfCards)"
+        cardImageView.image = UIImage(named: gameService.actualCard!.cardImage)
     }
     
     private func setupActions() {
@@ -70,12 +70,12 @@ class GameViewController: UIViewController {
         wrongButton.layer.cornerRadius = wrongButton.frame.height/8
         wrongButton.clipsToBounds = true
         wrongButton.backgroundColor = .none
-        wrongButton.setBackgroundColor(.systemPink, for: .normal)
-        wrongButton.setBackgroundColor(UIColor.systemPink.darken(by: 0.07), for: .highlighted)
+        wrongButton.setBackgroundColor(.typoopsRed, withAlpha: 0.2, for: .normal)
+        wrongButton.setBackgroundColor(UIColor.typoopsRed.darken(by: 0.07), withAlpha: 0.2, for: .highlighted)
         wrongButton.setTitleColor(.gray, for: .highlighted)
         
-        correctButton.setBackgroundColor(.systemGreen, for: .normal)
-        correctButton.setBackgroundColor(UIColor.systemGreen.darken(by: 0.07), for: .highlighted)
+        correctButton.setBackgroundColor(.typoopsGreen, withAlpha: 0.2, for: .normal)
+        correctButton.setBackgroundColor(UIColor.typoopsGreen.darken(by: 0.07), withAlpha: 0.2, for: .highlighted)
         correctButton.setTitleColor(.gray, for: .highlighted)
         correctButton.clipsToBounds = true
         correctButton.layer.cornerRadius = correctButton.frame.height/8
@@ -90,27 +90,38 @@ class GameViewController: UIViewController {
     
     private func answerButtonAction(correctAnswer: Bool) {
         
-        guard var card = actualCard else { return }
+        let isUserIsCorrect = gameService.userIsCorrect(comparedTo: correctAnswer)
+        let feedbackSymbol = getSymbolImage(isUserCorrect: isUserIsCorrect)
+        gameService.handleAnswer(correctAnswer)
+        feedbackView.symbol = feedbackSymbol
         
-        if card.isCorrect == correctAnswer {
-            card.userGetItRight = true
-            cards[cardCount] = card
+        feedbackView.animate {
+            [weak self] in
+            self?.gameService.goToNextCard(endGameAction: { [weak self] in
+                self?.goToResultsScreen()
+            }, uiUpdates: { [weak self] card, progress in
+                self?.countLabel.text = progress
+                self?.cardImageView.image = UIImage(named: card.cardImage)
+                self?.titleLabel.text = card.subject.rawValue
+            })
+        }
+    
+    }
+    
+    private func getSymbolImage(isUserCorrect: Bool) -> UIImage? {
+        let image: UIImage?
+        let configuration = UIImage.SymbolConfiguration(weight: .bold)
+        
+        if isUserCorrect {
+            image = UIImage(systemName: "checkmark", withConfiguration: configuration)
+            feedbackView.tintColor = .typoopsGreen
+            
+        } else {
+            image = UIImage(systemName: "xmark", withConfiguration: configuration)
+            feedbackView.tintColor = .typoopsRed
         }
         
-        cardCount += 1
-        countLabel.text = "\(cardCount+1)/\(cards.count)"
-        
-        guard cardCount < cards.count else {
-            goToResultsScreen()
-            return
-        }
-        
-        actualCard = cards[cardCount]
-        
-        if let actualCard = self.actualCard {
-            cardImageView.image = UIImage(named: actualCard.cardImage)
-            titleLabel.text = actualCard.subject.rawValue
-        }
+        return image
     }
     
     private func goToResultsScreen() {
@@ -118,7 +129,7 @@ class GameViewController: UIViewController {
         let storyBoard = UIStoryboard(named: .gameResults)
         guard let resultsViewController = storyBoard.instantiateViewController(withIdentifier: .gameResults) as? GameResultsViewController else { return }
         resultsViewController.modalPresentationStyle = .fullScreen
-        resultsViewController.cards = cards
+        resultsViewController.cards = gameService.cards
         resultsViewController.delegate = self
         self.present(resultsViewController, animated: true, completion: nil)
     }
@@ -127,8 +138,8 @@ class GameViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         guard let destination = segue.destination as? ContentInfoViewController else { return }
-        destination.titleString = cards[cardCount].subject.rawValue
-        destination.bodyString = cards[cardCount].subjectExplanation
+        destination.titleString = gameService.actualCard?.subject.rawValue ?? ""
+        destination.bodyString = gameService.actualCard?.subjectExplanation ?? ""
     }
     /*
     // MARK: - Navigation
@@ -144,18 +155,14 @@ class GameViewController: UIViewController {
 
 extension GameViewController: GameResultsDelegate {
     func newGame() {
-        cards = datasource.fetch()
-        cardCount = 0
         initialSetup()
         self.dismiss(animated: true, completion: nil)
-        print("hi new game")
     }
     
     func goToHome() {
         guard let nvc = navigationController else { return }
         self.dismiss(animated: true, completion: nil)
         nvc.popToRootViewController(animated: false)
-        print("Hi")
         
     }
 }

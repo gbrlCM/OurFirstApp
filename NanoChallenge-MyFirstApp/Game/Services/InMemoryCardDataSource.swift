@@ -204,7 +204,7 @@ struct InMemoryCardDatasource: CardsDatasource {
                     cardImage: "tracking_C",
                     subjectExplanation: "Tracking is the spacing between the letters.  The difference between tracking and kerning is that tracking has spacing applied to all letters. It's important to ensure the readability of a content.",
                     userGetItRight: false,
-                    wrongExplanation: "ypoop writer, I just can't distinguished the letters in your card text! Can you read it to me, please? Letters were too close from eachother just because you used a lot of negative tracking in this text! Go put some positive tracking so I can read it, please. Thank you.",
+                    wrongExplanation: "Typoop writer, I just can't distinguished the letters in your card text! Can you read it to me, please? Letters were too close from eachother just because you used a lot of negative tracking in this text! Go put some positive tracking so I can read it, please. Thank you.",
                     rightExplanation: "Tracking is the spacing between the letters.  The difference between tracking and kerning is that tracking has spacing applied to all letters. It's important to ensure the readability of a content."
                 ),
               wrong:
@@ -214,7 +214,7 @@ struct InMemoryCardDatasource: CardsDatasource {
                     cardImage: "tracking_W",
                     subjectExplanation: "Tracking is the spacing between the letters.  The difference between tracking and kerning is that tracking has spacing applied to all letters. It's important to ensure the readability of a content.",
                     userGetItRight: false,
-                    wrongExplanation: "ypoop writer, I just can't distinguished the letters in your card text! Can you read it to me, please? Letters were too close from eachother just because you used a lot of negative tracking in this text! Go put some positive tracking so I can read it, please. Thank you.",
+                    wrongExplanation: "Typoop writer, I just can't distinguished the letters in your card text! Can you read it to me, please? Letters were too close from eachother just because you used a lot of negative tracking in this text! Go put some positive tracking so I can read it, please. Thank you.",
                     rightExplanation: "Tracking is the spacing between the letters.  The difference between tracking and kerning is that tracking has spacing applied to all letters. It's important to ensure the readability of a content."
                 )
         )

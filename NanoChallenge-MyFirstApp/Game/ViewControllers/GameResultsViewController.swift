@@ -39,9 +39,11 @@ class GameResultsViewController: UIViewController {
         resultsCollectionView.register(ResultCell.self, forCellWithReuseIdentifier: rowIdentifier)
         resultsCollectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width, height: 300)
+        layout.itemSize = CGSize(width: resultsCollectionView.bounds.width-50, height: resultsCollectionView.bounds.height * 0.45)
         layout.minimumLineSpacing = 15
         resultsCollectionView.collectionViewLayout = layout
+        resultsCollectionView.showsVerticalScrollIndicator = false
+        resultsCollectionView.backgroundColor = .background
         
         exitButton.setTitleColor(.gray ,for: .highlighted)
         newGameButton.setTitleColor(.gray ,for: .highlighted)
@@ -65,7 +67,6 @@ class GameResultsViewController: UIViewController {
     }
     
     private func setNumberOfCorrectAnswers(for number: Int) {
-        print("number: \(number)")
         
         countLabel.text = "You got \(number)/\(cards.count)"
     }
@@ -73,7 +74,7 @@ class GameResultsViewController: UIViewController {
     private func setTexts(correctAnswerCount: Int) {
         if correctAnswerCount >= 8 {
             congratsLabel.text = "Amazing"
-            congratsLabel.textColor = .systemGreen
+            congratsLabel.textColor = .typoopsGreen
             
             jokeLabel.text = "now go fix our title!"
         } else if correctAnswerCount < 8 && correctAnswerCount >= 5 {
@@ -83,15 +84,11 @@ class GameResultsViewController: UIViewController {
             jokeLabel.text = "you're doing well my young poopawan!"
         } else {
             congratsLabel.text = "Jesus Christ!"
-            congratsLabel.textColor = .systemRed
+            congratsLabel.textColor = .typoopsRed
             
             jokeLabel.text = "you really need this app!"
         }
     }
-    
-//    private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-//
-//    }
     
     private func initialSetup() {
         let number = cards
@@ -122,7 +119,7 @@ extension GameResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: rowIdentifier, for: indexPath) as! ResultCell
         
-        cell.setup(title: generateTitleForCard(at: indexPath),
+        cell.setup(title: cards[indexPath.row].subject.rawValue,
                    body: cards[indexPath.row].answerExplanation,
                    isRight: cards[indexPath.row].userGetItRight,
                    image: UIImage(named: cards[indexPath.row].cardImage),
